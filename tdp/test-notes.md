@@ -11,15 +11,15 @@
 
 ## Code changes
 
-1. Spark version: `3.2.2-SNAPSHOT` → `3.2.2-TDP-0.1.0-SNAPSHOT`
-2. Hive version: `2.3.9` → `2.3.10-TDP-0.1.0-SNAPSHOT`
+1. Spark version: `3.2.2-SNAPSHOT` → `3.2.2-0.0`
+2. Hive version: `2.3.9` → `2.3.9-1.0`
 3. Hadoop profile:
 
    ```xml
    <profile>
      <id>hadoop-3.1</id>
      <properties>
-       <hadoop.version>3.1.1-TDP-0.1.0-SNAPSHOT</hadoop.version>
+       <hadoop.version>3.1.1-0.0</hadoop.version>
        <curator.version>2.12.0</curator.version>
        <hadoop-client-api.artifact>hadoop-client</hadoop-client-api.artifact>
        <hadoop-client-runtime.artifact>hadoop-yarn-api</hadoop-client-runtime.artifact>
@@ -81,7 +81,7 @@
    ```scala
    test("SPARK-33084: Add jar support Ivy URI in SQL") {
      val sc = spark.sparkContext
-     val hiveVersion = "2.3.10-TDP-0.1.0-SNAPSHOT"
+     val hiveVersion = "2.3.9-1.0"
    ```
 
 ## Test Command
@@ -149,7 +149,7 @@ export DEFAULT_ARTIFACT_REPOSITORY="file:$HOME/.m2/repository/"
   - Cause: Apache Ivy doesn't support comma-separated repositories lists
   - Solution:
     - Only use the local Maven cache as `DEFAULT_ARTIFACT_REPOSITORY`. See [Code changes 4.](#code-changes)
-    - The failure related to `hive-storage-api;2.6.0` remains because the version `2.3.10-TDP-0.1.0-SNAPSHOT` of Hive only contains `hive-storage-api:2.7.0`
+    - The failure related to `hive-storage-api;2.6.0` remains because the version `2.3.9-1.0` of Hive only contains `hive-storage-api:2.7.0`
   - Stack trace:
 
     ```
@@ -953,7 +953,7 @@ export DEFAULT_ARTIFACT_REPOSITORY="file:$HOME/.m2/repository/"
 - Error:
 
   ```
-  [unresolved dependency: org.apache.hive.hcatalog#hive-hcatalog-core;2.3.10-TDP-0.1.0-SNAPSHOT: not found]
+  [unresolved dependency: org.apache.hive.hcatalog#hive-hcatalog-core;2.3.9-1.0: not found]
   ```
 
   - Status: **Resolved**
@@ -966,7 +966,7 @@ export DEFAULT_ARTIFACT_REPOSITORY="file:$HOME/.m2/repository/"
   - Stack trace:
 
     ```
-    java.lang.RuntimeException: [unresolved dependency: org.apache.hive.hcatalog#hive-hcatalog-core;2.3.10-TDP-0.1.0-SNAPSHOT: not found]
+    java.lang.RuntimeException: [unresolved dependency: org.apache.hive.hcatalog#hive-hcatalog-core;2.3.9-1.0: not found]
       at org.apache.spark.deploy.SparkSubmitUtils$.resolveMavenCoordinates(SparkSubmit.scala:1447)
       at org.apache.spark.util.DependencyUtils$.resolveMavenDependencies(DependencyUtils.scala:185)
       at org.apache.spark.util.DependencyUtils$.resolveMavenDependencies(DependencyUtils.scala:159)
@@ -1331,7 +1331,7 @@ export DEFAULT_ARTIFACT_REPOSITORY="file:$HOME/.m2/repository/"
 
     - ~~`SPARK-32212: built-in Hadoop version should support shaded client if it is not hadoop 2`~~
 
-  - Cause: Hadoop `3.1.1-TDP-0.1.0-SNAPSHOT` does not support shaded client
+  - Cause: Hadoop `3.1.1-0.0` does not support shaded client
   - Solution: Modify the test. See [Code changes 6.](#code-changes).
   - Stack trace:
 
