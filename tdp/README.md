@@ -37,3 +37,7 @@ mvn test -Phive -Phive-thriftserver -Pyarn -Phadoop-3.1 --fail-never
 ## Test execution notes
 
 See `./test_notes.txt`
+
+## Build notes
+
+Commit `269ed77a09fdc28df4e0fca1f0d38fecde10555a` adds the profile `hadoop-3.1` which initially does not exist.
