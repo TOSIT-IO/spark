@@ -1,6 +1,6 @@
 # TDP Spark Notes
 
-The version 3.2.4-1.0-SNAPSHOT of Apache Spark is based on the apache 3.2.4 release of the [Apache repository](https://github.com/apache/spark/tree/branch-3.2).
+The version 3.2.4-1.0 of Apache Spark is based on the apache 3.2.4 release of the [Apache repository](https://github.com/apache/spark/tree/branch-3.2).
 
 ## Jenkinfile
 
@@ -12,7 +12,7 @@ The file `./Jenkinsfile-sample` can be used in a Jenkins / Kubernetes environmen
 ./dev/make-distribution.sh --name tdp --tgz -Phive -Phive-thriftserver -Pyarn -Phadoop-3.1
 ```
 
-The command generates a `.tar.gz` file of the release at `./spark-3.2.4-1.0-SNAPSHOT-bin-tdp.tgz`.
+The command generates a `.tar.gz` file of the release at `./spark-3.2.4-1.0-bin-tdp.tgz`.
 
 ## Testing parameters
 

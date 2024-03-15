@@ -11,7 +11,7 @@
 
 ## Code changes
 
-1. Spark version: `3.2.4-SNAPSHOT` → `3.2.4-1.0-SNAPSHOT`
+1. Spark version: `3.2.4-SNAPSHOT` → `3.2.4-1.0`
 2. Hive version: `2.3.9` → `2.3.9-2.0`
 3. Hadoop profile:
 
