@@ -41,7 +41,7 @@
       <dependencies>
         <dependency>
           <groupId>org.apache.hadoop</groupId>
-          <artifactId>hadoop-client-runtime</artifactId>
+          <artifactId>hadoop-client</artifactId>
           <version>${hadoop.version}</version>
           <scope>${hadoop.deps.scope}</scope>
         </dependency>
@@ -90,11 +90,6 @@
       <artifactId>spark-tags_${scala.binary.version}</artifactId>
       <type>test-jar</type>
       <scope>test</scope>
-    </dependency>
-    <dependency>
-      <groupId>org.apache.hadoop</groupId>
-      <artifactId>hadoop-client-api</artifactId>
-      <version>${hadoop.version}</version>
     </dependency>
 
     <!-- Explicit listing of transitive deps that are shaded. Otherwise, odd compiler crashes. -->
