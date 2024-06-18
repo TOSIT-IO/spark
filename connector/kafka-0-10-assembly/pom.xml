@@ -21,7 +21,7 @@
   <parent>
     <groupId>org.apache.spark</groupId>
     <artifactId>spark-parent_2.12</artifactId>
-    <version>3.5.1-stack3.1.1-0.0-SNAPSHOT</version>
+    <version>3.5.1-stack3.1.1-0.0</version>
     <relativePath>../../pom.xml</relativePath>
   </parent>
 
