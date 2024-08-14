@@ -30,7 +30,8 @@ private[spark] object VersionUtils {
 
   /**
    * Whether the Hadoop version used by Spark is 3.3.x
-   * If using Hadoop < 3.3.x, lz4 codec tests will fail as detailed here https://github.com/apache/spark/pull/34064
+   * If using Hadoop < 3.3.x, lz4 codec tests will fail as detailed here
+   * https://github.com/apache/spark/pull/34064
    */
   def isHadoop3: Boolean = majorMinorVersion(VersionInfo.getVersion) == (3, 3)
 
